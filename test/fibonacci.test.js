@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { fibonacci } from '../src/fibonacci.js'
+import { fibonacci } from '../src/functions.js'
 
 describe('función de fibonacci', () => {
     it('fibonacci', () => {
