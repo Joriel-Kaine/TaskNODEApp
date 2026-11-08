@@ -10,7 +10,7 @@ describe('función de Fibonacci', () => {
     })
 })
 
-describe('validación del PIN'), () => {
+describe('validación del PIN', () => {
     it('validarPIN', () => {
         expect(isValidPin(null)).toBe(false);
         expect(isValidPin(undefined)).toBe(false);
@@ -21,4 +21,4 @@ describe('validación del PIN'), () => {
         expect(isValidPin('0000')).toBe(false);
         expect(isValidPin('12345')).toBe(false);
     })
-}
+})
