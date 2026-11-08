@@ -1,25 +1,17 @@
 function fibonacci(n) {
-    if (n < 0) {
-        throw new RangeError('Solo números enteros no negativos son permitidos');
-    }
+    if (n < 0) throw new RangeError('Solo números enteros >= 0');
 
-    if (n === 0) {
-        return 0;
-    }
+    if (n <= 1) return n;
 
-    if (n === 1) {
-        return 1;
-    }
-
-    let a = 0, b = 1, aux;
+    let previous = 0, actual = 1;
 
     for (let i = 2; i <= n; i++) {
-        aux = a + b;
-        a = b;
-        b = aux;
+        const next = previous + actual;
+        previous = actual;
+        actual = next;
     }
 
-    return b;
+    return actual;
 }
 
 export { fibonacci };
