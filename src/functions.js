@@ -14,4 +14,38 @@ function fibonacci(n) {
     return actual;
 }
 
-export { fibonacci };
+function isValidPin(a) {
+    if (a === null) {
+        return false;
+    }
+
+    if (a === undefined) {
+        return false;
+    }
+
+    if (a === '') {
+        return false;
+    }
+
+    if (a.length < 4 || a.length > 6 || a.length === 5) {
+        return false;
+    }
+
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] < '0' || a[i] > '9') {
+            return false;
+        }
+    }
+
+    let aux = a[0];
+    for (let i = 1; i < a.length; i++) {
+        if (aux !== a[i]) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+export { fibonacci, isValidPin };
