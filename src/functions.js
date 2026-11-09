@@ -14,38 +14,11 @@ function fibonacci(n) {
     return actual;
 }
 
-function isValidPin(a) {
-    if (a === null) {
-        return false;
-    }
+function isValidPin(pin) {
+    const uniqueDigits = new Set(pin);
 
-    if (a === undefined) {
-        return false;
-    }
-
-    if (a === '') {
-        return false;
-    }
-
-    if (a.length < 4 || a.length > 6 || a.length === 5) {
-        return false;
-    }
-
-    for (let i = 0; i < a.length; i++) {
-        if (a[i] < '0' || a[i] > '9') {
-            return false;
-        }
-    }
-
-    let aux = a[0];
-    for (let i = 1; i < a.length; i++) {
-        if (aux !== a[i]) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
+    return !(pin == null) && !(pin === '') && (pin.length === 4 || pin.length === 6)
+        && (/^[0-9]+$/.test(pin)) && !(uniqueDigits.size === 1);
 }
 
 export { fibonacci, isValidPin };
